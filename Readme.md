@@ -38,11 +38,10 @@ A modern, responsive fitness website built with HTML, CSS, JavaScript, Bootstrap
 clickfit-website/
 ├── server.js              # Node.js server
 ├── package.json           # Node.js dependencies
-├── public/
-│   └── index.html         # Main website file
+├── clickfit_website.html         # Main website file
 ├── upload_images/         # Directory for uploaded images (auto-created)
 ├── database/
-│   └── setup.sql          # MySQL database setup script
+│   └── db.sql          # MySQL database setup script
 └── README.md              # This file
 ```
 
