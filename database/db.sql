@@ -13,15 +13,11 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     
-    -- Add indexes for better performance
     INDEX idx_email (email),
     INDEX idx_type (type),
     INDEX idx_active (active)
 );
 
--- ============================================
--- Create Stored Procedure: addUser
--- ============================================
 
 DELIMITER //
 
@@ -47,14 +43,13 @@ BEGIN
 
     START TRANSACTION;
     
-    -- Check if email already exists
+
     IF EXISTS (SELECT 1 FROM users WHERE email = p_email) THEN
         SET p_success = FALSE;
         SET p_message = 'Email already exists';
         SET p_userId = NULL;
         ROLLBACK;
     ELSE
-        -- Insert new user
         INSERT INTO users (email, password, type, active)
         VALUES (p_email, p_password, IFNULL(p_type, 'member'), IFNULL(p_active, TRUE));
         
@@ -82,7 +77,6 @@ CALL addUser(
 
 SELECT @user_id as userId, @success as success, @message as message;
 
--- Verify the users table
 
 SELECT * FROM users;
 
