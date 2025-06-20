@@ -38,10 +38,10 @@ A modern, responsive fitness website built with HTML, CSS, JavaScript, Bootstrap
 clickfit-website/
 ├── server.js              # Node.js server
 ├── package.json           # Node.js dependencies
-├── clickfit_website.html         # Main website file
+├── clickfit_website.html  # Main website file
 ├── upload_images/         # Directory for uploaded images (auto-created)
 ├── database/
-│   └── db.sql          # MySQL database setup script
+│   └── db.sql             # MySQL database setup script
 └── README.md              # This file
 ```
 
@@ -67,9 +67,9 @@ Make sure you have the following installed:
    - Start your MySQL server
    - Run the SQL script to create the database structure:
    ```sql
-   mysql -u your_username -p < database/setup.sql
+   mysql -u your_username -p < database/db.sql
    ```
-   Or copy and paste the contents of the setup.sql file into your MySQL client
+   Or copy and paste the contents of the db.sql file into your MySQL client
 
 4. **Create the upload directory:**
    The `upload_images` directory will be created automatically when you start the server.
